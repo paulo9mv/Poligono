@@ -10,8 +10,7 @@ public class Principal {
 		polygonOp.addPoint(100, 0);
                 polygonOp.addPoint(20,40);
 		polygonOp.addPoint(0, 100);
-                
-                
+
 		
 		int [] cor = new int [3];
 		cor[0] = 0;
@@ -19,7 +18,7 @@ public class Principal {
 		cor[2] = 80;
 		
 		polygonOp.setCor(cor);
-		polygonOp.translate(30, 30);
+		polygonOp.translate(100, 100);
                 
                 ViewPolygon vp = new ViewPolygon(polygonOp);
                 vp.draw(polygonOp);

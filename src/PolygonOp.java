@@ -17,7 +17,6 @@ public class PolygonOp extends Polygon{
 		for(int i = 1; i < this.npoints; i++){
 			alterarPonto(i, fatorEscala);
 		}
-            
 	}
 	private void alterarPonto(int ponto, float fatorEscala){
 		this.xpoints[ponto] -= this.xpoints[0];

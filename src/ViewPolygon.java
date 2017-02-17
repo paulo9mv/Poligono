@@ -11,22 +11,34 @@
 public class ViewPolygon implements Pintar{
 
     private NovoJFrame mv;
+    private CampoBotoes campoBotoes;
     private boolean isDrawed;
     private int oldX;
     private int oldY;
     private int oldWidth;
     private int oldHeight;
     private PolygonOp polygonOp;
+    private PolygonOp polygonOpOriginal;
+  
+    
     
     public PolygonOp getPolygonOp(){
-        return polygonOp;
+        return this.polygonOp;
+    }
+    public PolygonOp getPolygonOp(boolean enableOriginal){
+        return this.polygonOpOriginal;
     }
     
     public NovoJFrame getFrame(){
         return mv;
     }
     
+    public void reset(){
+        this.polygonOp = this.polygonOpOriginal;
+    }
+    
     public ViewPolygon(PolygonOp polygonOp){
+        this.polygonOpOriginal = polygonOp;
         this.polygonOp = polygonOp;
         this.isDrawed = false;
     }
@@ -46,6 +58,7 @@ public class ViewPolygon implements Pintar{
     
     private void initiateView(){
         this.mv = new NovoJFrame(this);
+        this.campoBotoes = new CampoBotoes(this);
     }
     private void atualizarCaixa(PolygonOp polygonOp){
         this.oldX =polygonOp.getBounds().x;
