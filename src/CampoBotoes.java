@@ -136,8 +136,8 @@ public class CampoBotoes extends javax.swing.JFrame {
         // TODO add your handling code here:
         ///Resetar original
         this.viewPolygon.reset();
-        this.viewPolygon.draw(this.viewPolygon.getPolygonOp(true));
-        System.out.printf("trab");
+        this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
+       
     }//GEN-LAST:event_jButton3ActionPerformed
     public float getEscala(){
         return escala;

@@ -5,11 +5,20 @@ import java.awt.Polygon;
 public class PolygonOp extends Polygon{
 	
 	private int [] cor;
-      
 
 	public PolygonOp(){
 		super();
 	}
+        public void resetar(int xPoints[], int yPoints[], int nPoints){
+            for(int i = 0; i < nPoints; i++){
+            this.xpoints[i] = xPoints[i];
+            this.ypoints[i] = yPoints[i];
+        }
+        this.npoints = nPoints;
+            
+            this.invalidate();
+        }
+        
 	public PolygonOp(int xPoints[], int yPoints[], int nPoints){
 		super(xPoints, yPoints, nPoints);
 	}
