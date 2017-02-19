@@ -22,10 +22,39 @@ public class PolygonOp extends Polygon{
 	public PolygonOp(int xPoints[], int yPoints[], int nPoints){
 		super(xPoints, yPoints, nPoints);
 	}
+        
+        public void alterarEscalaY(float fatorEscala){
+		for(int i = 1; i < this.npoints; i++){
+			alterarPontoY(i, fatorEscala);
+		}
+	}
+        private void alterarPontoY(int ponto, float fatorEscala){
+		this.ypoints[ponto] -= this.ypoints[0];			
+		this.ypoints[ponto] *= fatorEscala;			
+		this.ypoints[ponto] += this.ypoints[0];		
+		this.invalidate();
+	}
+        
+        public void alterarEscalaX(float fatorEscala){
+            for(int i = 1; i < this.npoints; i++){
+			alterarPontoX(i, fatorEscala);
+		}
+        }
 	public void alterarEscala(float fatorEscala){
 		for(int i = 1; i < this.npoints; i++){
 			alterarPonto(i, fatorEscala);
 		}
+	}
+        private void alterarPontoX(int ponto, float fatorEscala){
+		this.xpoints[ponto] -= this.xpoints[0];
+		
+		
+		this.xpoints[ponto] *= fatorEscala;
+		
+		
+		this.xpoints[ponto] += this.xpoints[0];
+		
+		this.invalidate();
 	}
 	private void alterarPonto(int ponto, float fatorEscala){
 		this.xpoints[ponto] -= this.xpoints[0];

@@ -27,6 +27,8 @@ public class NovoJFrame extends javax.swing.JFrame {
 	private final Color COLOR_WHITE = new Color(255, 255, 255);
         private float escala;
         private ViewPolygon viewPolygon;
+        private int transladoX;
+        private int transladoY;
         
         @Override
     public void paint(Graphics g) 
@@ -135,8 +137,7 @@ public class NovoJFrame extends javax.swing.JFrame {
         return escala;
     }
     
-    private int transladoX;
-    private int transladoY;
+    
     
     /**
      * @param args the command line arguments
