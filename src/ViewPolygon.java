@@ -33,7 +33,7 @@ public class ViewPolygon implements Pintar{
     }
     
     public NovoJFrame getFrame(){
-        return mv;
+        return this.mv;
     }
     
     public void reset(){
