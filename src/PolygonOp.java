@@ -19,6 +19,14 @@ public class PolygonOp extends Polygon{
             this.invalidate();
         }
         
+        public void showPoints(){
+            for(int i = 0; i < this.npoints; i++){
+           
+            System.out.printf("%d, %d\n", this.xpoints[i] , this.ypoints[i]);
+        }
+        System.out.printf("N = %d\n", this.npoints);
+        }
+        
 	public PolygonOp(int xPoints[], int yPoints[], int nPoints){
 		super(xPoints, yPoints, nPoints);
 	}

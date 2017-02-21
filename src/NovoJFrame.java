@@ -36,8 +36,10 @@ public class NovoJFrame extends javax.swing.JFrame {
 		Graphics2D g2 = (Graphics2D)g;
 		if(isDrawed){
 			g2.setColor(COLOR_WHITE);
-			g2.clearRect(x, y, width, height);
-			g2.fillRect(x, y, width, height);
+                        g2.clearRect(this.getBounds().x, this.getBounds().y, this.getBounds().width, this.getBounds().height);
+                        g2.fillRect(this.getBounds().x, this.getBounds().y, this.getBounds().width, this.getBounds().height);
+			//g2.clearRect(x, y, width, height);
+			//g2.fillRect(x, y, width, height);
 		}
 		
 		int cor[] = this.fig.getCor();
@@ -89,7 +91,7 @@ public class NovoJFrame extends javax.swing.JFrame {
     public NovoJFrame(ViewPolygon vp) {
         this.fig = vp.getPolygonOp();
         this.viewPolygon = vp;
-        
+        this.setName("Poligono");
         initComponents();
         setVisible(true);
     }
@@ -134,8 +136,10 @@ public class NovoJFrame extends javax.swing.JFrame {
           
     private String text; 
     public float getEscala(){
+        
         return escala;
     }
+    
     
     
     

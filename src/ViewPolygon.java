@@ -28,7 +28,7 @@ public class ViewPolygon implements Pintar{
     public PolygonOp getPolygonOp(){
         return this.polygonOp;
     }
-    public PolygonOp getPolygonOp(boolean enableOriginal){
+    public PolygonOp getPolygonOpOriginal(){
         return this.polygonOpOriginal;
     }
     
@@ -39,7 +39,7 @@ public class ViewPolygon implements Pintar{
     public void reset(){
         this.polygonOp.resetar(this.xOriginal, this.yOriginal, this.nOriginal);
     }
-    private void startOriginal(PolygonOp p){
+    public void startOriginal(PolygonOp p){
         this.xOriginal = new int[p.npoints];
         this.yOriginal = new int[p.npoints];
         for(int i = 0; i < p.npoints; i++){

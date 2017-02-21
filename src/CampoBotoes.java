@@ -105,6 +105,11 @@ public class CampoBotoes extends javax.swing.JFrame {
         jLabel2.setText("TRANSLADO");
 
         jButton2.setText("OK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Resetar Original");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -286,7 +291,9 @@ public class CampoBotoes extends javax.swing.JFrame {
         setTexts();
         
         this.viewPolygon.getPolygonOp().addPoint(pontoX, pontoY);
+        this.viewPolygon.startOriginal(this.viewPolygon.getPolygonOp());
         this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
+        this.viewPolygon.getPolygonOp().showPoints();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
@@ -302,6 +309,18 @@ public class CampoBotoes extends javax.swing.JFrame {
         else
             this.escalaAmbos = false;
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int translateX = Integer.parseInt(jTextField3.getText());
+        int translateY = Integer.parseInt(jTextField4.getText());
+        
+        setTexts();
+        
+        this.viewPolygon.getPolygonOp().translate(translateX, translateY);
+        this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
     public float getEscala(){
         return escala;
     }

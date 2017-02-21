@@ -9,8 +9,7 @@ public class Principal {
 		polygonOp.addPoint(0, 0);
 		polygonOp.addPoint(100, 0);
                 polygonOp.addPoint(20,40);
-                polygonOp.addPoint(30,50);
-		polygonOp.addPoint(0, 100);
+                
 		
 		int [] cor = new int [3];
 		cor[0] = 0;
