@@ -49,15 +49,17 @@ public class ViewPolygon implements Pintar{
         this.nOriginal = p.npoints;
     }
     public ViewPolygon(PolygonOp polygonOp){
+        
         this.polygonOp = polygonOp;
-        this.startOriginal(polygonOp);
+        
+        
         this.isDrawed = false;
+        Inicial inicial = new Inicial(this);
     }
     
     @Override
     public void draw(PolygonOp polygonOp) {
         if(!isDrawed){
-            initiateView();
             isDrawed = true;
             this.atualizarCaixa(polygonOp);
 	}
@@ -67,9 +69,11 @@ public class ViewPolygon implements Pintar{
         this.mv.pintarRetangulo(polygonOp);
     }
     
-    private void initiateView(){
+    public void initiateView(){
         this.mv = new NovoJFrame(this);
         this.campoBotoes = new CampoBotoes(this);
+        this.startOriginal(this.polygonOp);
+        draw(this.polygonOp);
     }
     private void atualizarCaixa(PolygonOp polygonOp){
         this.oldX =polygonOp.getBounds().x;

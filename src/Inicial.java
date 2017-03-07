@@ -11,6 +11,7 @@
 public class Inicial extends javax.swing.JFrame {
 
     private int pontos = 0;
+    private ViewPolygon viewPolygon;
     /**
      * Creates new form Inicial
      */
@@ -20,7 +21,7 @@ public class Inicial extends javax.swing.JFrame {
         setVisible(true);
     }
 
-    private ViewPolygon viewPolygon;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -143,6 +144,7 @@ public class Inicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try{
         int pontoX = Integer.parseInt(jTextField1.getText());
         int pontoY = Integer.parseInt(jTextField2.getText());
         
@@ -152,12 +154,19 @@ public class Inicial extends javax.swing.JFrame {
         switch(this.pontos){
             case 1:
                 jLabel2.setText("OK");
+                break;
             case 2:
                 jLabel3.setText("OK");
+                break;
             case 3:
                 jLabel4.setText("OK");
-            default:
                 this.setVisible(false);
+                this.viewPolygon.initiateView();
+                break;       
+        }
+        }
+        catch(NumberFormatException e){
+            System.out.printf("Formato invalido");
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

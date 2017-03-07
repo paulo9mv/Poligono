@@ -18,7 +18,6 @@ public class CampoBotoes extends javax.swing.JFrame {
     private int transladoY;
     private ViewPolygon viewPolygon;
     private boolean escalaAmbos;
-    private CaixaDeTexto caixaDeTexto = new CaixaDeTexto();
     private char letraDigitada;
    
     /**
@@ -37,7 +36,7 @@ public class CampoBotoes extends javax.swing.JFrame {
                     
                     letraDigitada = ke.getKeyChar();
                    
-                System.out.println("User is editing something in TextField");
+               
                 if(escalaAmbos)
                     jTextField2.setText(jTextField1.getText() + letraDigitada);
             }
@@ -247,7 +246,7 @@ public class CampoBotoes extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        System.out.println("trab");
+        
         if(this.escalaAmbos){
             jTextField2.setText(jTextField1.getText());
         }
@@ -256,6 +255,8 @@ public class CampoBotoes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try{
+        
         String textoX = jTextField1.getText();
         String textoY = jTextField2.getText();
         this.escala = Float.parseFloat(textoX);
@@ -272,6 +273,10 @@ public class CampoBotoes extends javax.swing.JFrame {
             this.viewPolygon.getPolygonOp().alterarEscalaY(escalaY);
         }
         this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
+        }
+        catch(NumberFormatException e){
+            System.out.println("Formato inválido.");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -285,6 +290,7 @@ public class CampoBotoes extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         //Botão adicionar ponto
+        try{
         int pontoX = Integer.parseInt(jTextField5.getText());
         int pontoY = Integer.parseInt(jTextField6.getText());
         
@@ -294,6 +300,10 @@ public class CampoBotoes extends javax.swing.JFrame {
         this.viewPolygon.startOriginal(this.viewPolygon.getPolygonOp());
         this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
         this.viewPolygon.getPolygonOp().showPoints();
+        }
+        catch(NumberFormatException e){
+            System.out.println("Formato inválido.");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
@@ -312,6 +322,7 @@ public class CampoBotoes extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        try{
         int translateX = Integer.parseInt(jTextField3.getText());
         int translateY = Integer.parseInt(jTextField4.getText());
         
@@ -319,6 +330,10 @@ public class CampoBotoes extends javax.swing.JFrame {
         
         this.viewPolygon.getPolygonOp().translate(translateX, translateY);
         this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
+        }
+        catch(NumberFormatException e){
+            System.out.println("Formato inválido!");
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
     public float getEscala(){
