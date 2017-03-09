@@ -299,7 +299,7 @@ public class CampoBotoes extends javax.swing.JFrame {
         this.viewPolygon.getPolygonOp().addPoint(pontoX, pontoY);
         this.viewPolygon.startOriginal(this.viewPolygon.getPolygonOp());
         this.viewPolygon.draw(this.viewPolygon.getPolygonOp());
-        this.viewPolygon.getPolygonOp().showPoints();
+        
         }
         catch(NumberFormatException e){
             System.out.println("Formato inválido.");
